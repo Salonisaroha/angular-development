@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -71,6 +71,48 @@ setEmail(){
   this.email="sami123@gmail.com";
 }
 display=true;
+hide(){
+  this.display=false;
 }
+show(){
+  this.display=true;
+}
+toggle(){
+  this.display=!this.display;
+}
+color='red';
+// handleColor(val:number){
+//   this.color=val;
+// }
+// handleInput(event: Event) {
+//   this.color = parseInt((event.target as HTMLInputElement).value, 10);
+//   console.log(this.color);
+// }
+// handleSwitch(val:string){
+//   this.color = val;
+// }
+// handleEvent(event:Event){
+// this.color=(event.target as HTMLInputElement).value;
+// }
+
+users =["alpha", "beta", "gamma","sin", "cos","cot", "tan", "cosec", "sec"];
+students = [
+ {name:'anil', age:12, email:'fufu@123gmail.com'},
+ {name:'lili', age:13, email:'lili@123gmail.com'},
+ {name:'yolo', age:14, email:'peter@gmail.com'},
+{name:'keema', age:15, email:'keema@gmail.com'},
+ {name:'hippo', age:16, email:'hippo@gmail.com'}
+]
+handleEvent(){
+
+}
+count = signal(10);
+x = 20;
+updateValue(){
+  this.x=50;
+}
+
+}
+
 
 

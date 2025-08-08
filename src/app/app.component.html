@@ -18,7 +18,7 @@ sum(10,20); -->
 <div (mouseenter)="handleEvent($event)" style="background-color:green; width:50px; height:40px;"></div>
 <div (mousehover)="handleEvent($event)" style="background-color: burlywood; width:30px; height:30px"></div> -->
 
-<input type="text" (input)="getName($event)" placeholder="Enter Name" value="{{name}}">
+<!-- <input type="text" (input)="getName($event)" placeholder="Enter Name" value="{{name}}">
 <button (click)="showName()">Get Name!</button>
 <button (click)="setName()">Set Name!</button>
 <input type="text" placeholder="Enter your email" #emailField value="{{email}}">
@@ -27,13 +27,73 @@ sum(10,20); -->
 
 <h4>{{email}}</h4>
 <h4>{{displayEmail}}</h4>
- 
+ <button (click)="hide()">Hide Dev</button>
+ <button (click)="show()">Show div</button>
+ <button (click)="toggle()">Toggle</button>
 @if(display){
     <div style="width:100px; background-color: aqua; height: 40px; border: 2px; border-radius: 1px;"></div>
+} -->
+
+<!-- <h5>Control flow | Conditions</h5>
+<button (click)="handleColor(1)">Red</button>
+<button (click)="handleColor(2)">Blue</button>
+<button (clcik)="handleColor(3)">Yellow</button>
+<button (click)="handleColor(10)">black</button>
+<input type="text" (input)="handleInput($event)" placeholder="Enter color number">
+
+@if (color == 1) {
+  <div style="background-color: red; height:20px; width:20px;"></div>
 }
+@else if (color == 2) {
+  <div style="background-color: blue; height:20px; width:20px;"></div>
+}
+@else if (color == 3) {
+  <div style="background-color: yellow; height:20px; width:20px;"></div>
+}
+@else {
+  <div style="background-color: black; height:20px; width:20px;"></div>
+} -->
 
+<!-- <button (click)="handleSwitch('red')">Red</button>
+<button (click)="handleSwitch('yellow')">Yellow</button>
+<button (click)="handleSwitch('blue')">Blue</button>
+<button (click)="handleSwitch('green')">Green</button>
+<input tyep="text" placeholder="enter color name" (input)="handleEvent($event)">
+@switch(color){
+    @case('red'){
+        <div style="background-color: red; width:30px; height:40px;"></div>
+    }
+    @case('yellow'){
+         <div style="background-color: yellow; width:30px; height:40px;"></div>
+    }
+    @case('blue'){
+         <div style="background-color: blue; width:30px; height:40px;"></div>
+    }
+    @case('green'){
+         <div style="background-color: green; width:30px; height:40px;"></div>
+    }
+    @default{
+        <div style="background-color: black; width:30px; height:30px;"></div>
+    }
+} -->
 
+<!-- @for(user of users; track user){
+    <h5>{{user}}</h5>
+}
+@for(student of students; track student.name;let id=$index){
+    <h5>
+        <span>{{id+1}}</span>
+        <span>{{student.name}}</span>
+        <span>{{student.age}}</span>
+        <span>{{student.email}}</span>
 
+    </h5>
+  
+} -->
+
+<h5>{{count()}}</h5>
+<button (click)="updateValue()">Update me!</button>
+<h6>{{x}}</h6>
 
 
 
