@@ -28,7 +28,9 @@ sum(10,20); -->
 <h4>{{email}}</h4>
 <h4>{{displayEmail}}</h4>
  
-<div *ngIf="display" style="width:100px; background-color: aqua; height: 40px; border: 2px solid; border-radius: 1px;"></div>
+@if(display){
+    <div style="width:100px; background-color: aqua; height: 40px; border: 2px; border-radius: 1px;"></div>
+}
 
 
 
