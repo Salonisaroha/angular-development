@@ -1,28 +1,50 @@
-# MyApp
+# Angular Learning Project 🚀
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.16.
+This repository is my hands-on practice while learning **Angular**.  
+I have explored Angular step by step — from the basics of components and data binding to advanced concepts like services, API integration, lazy loading, and deployment.  
 
-## Development server
+---
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## 📖 Topics Covered
+Here are the key Angular concepts I practiced in this project:
 
-## Code scaffolding
+- Introduction to Angular & setup on Windows/macOS  
+- Angular file & folder structure  
+- Interpolation & Angular CLI usage  
+- Components and creating custom components  
+- Handling events and function calls on button click  
+- TypeScript basics and defining data types  
+- Building a Counter Application  
+- Working with input fields and form controls  
+- Styling in Angular (inline & external)  
+- Conditional rendering (`if`, `else if`, `switch`)  
+- Loops in Angular (`for`, contextual variables)  
+- Signals, computed signals & effects  
+- Two-way data binding  
+- Building a To-Do List project  
+- Dynamic styling  
+- Angular directives (`*ngIf`, `*ngFor`, `*ngSwitch`)  
+- Basic and advanced routing (including 404 handling)  
+- Passing data between components and pages  
+- Reactive Forms and Template-driven Forms  
+- Form grouping and form validation  
+- Parent-to-child and child-to-parent communication  
+- Pipes and custom pipes  
+- Component lifecycle methods  
+- Services in Angular  
+- REST API calls (GET, POST, PUT, DELETE)  
+- Installing and using JSON server  
+- Lazy loading modules  
+- Deploying Angular apps on Vercel  
+- Angular interview questions (basic concepts review)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+---
 
-## Build
+## 🛠 Tech Stack
+- **Angular**  
+- **TypeScript**  
+- **RxJS**  
+- **HTML / CSS**  
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+---
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
-"# angular-development" 
