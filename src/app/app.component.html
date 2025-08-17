@@ -1,4 +1,7 @@
-<h6>Angular js uses single page application which does not require upload the page again and again.</h6>
+<h6>
+  Angular js uses single page application which does not require upload the page
+  again and again.
+</h6>
 
 <!-- Other components -->
 <app-login></app-login>
@@ -29,9 +32,9 @@ sum(10,20);
 <h4>{{displayEmail}}</h4>
  <button (click)="hide()">Hide Dev</button>
  <button (click)="show()">Show div</button>
- <button (click)="toggle()">Toggle</button>
+ <button (click)="toggle()">Toggle</button> 
 
-                                                                   <!-- ng directives -->
+<!-- ng directives -->
 @if(display){
     <div style="width:100px; background-color: aqua; height: 40px; border: 2px; border-radius: 1px;"></div>
 }
@@ -61,7 +64,7 @@ sum(10,20);
 <button (click)="handleSwitch('blue')">Blue</button>
 <button (click)="handleSwitch('green')">Green</button>
 <input tyep="text" placeholder="enter color name" (input)="handleEvent($event)">
-                                                                          <!-- switch directive -->
+<!-- switch directive -->
 @switch(color){
     @case('red'){
         <div style="background-color: red; width:30px; height:40px;"></div>
@@ -169,7 +172,7 @@ sum(10,20);
 
 <app-header></app-header>
 <router-outlet></router-outlet>
-                                                                                             <!-- forms in angular -->
+<!-- forms in angular -->
 <h1>Basic of React Forms</h1>
 <form actions="" method="post">
   <input type="text" placeholder="Enter Name" [formControl]="name">
@@ -185,21 +188,21 @@ sum(10,20);
 <h1>Form Grouping in Reactive Forms</h1>
 <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
 
-  <!-- Name -->
-  <input type="text" placeholder="Enter name" formControlName="name">
+<!-- Name -->
+<input type="text" placeholder="Enter name" formControlName="name">
   <span *ngIf="name?.hasError('required') && (name?.dirty || name?.touched)">* Please enter username</span>
   <br><br>
 
-  <!-- Password -->
-  <input type="password" placeholder="Enter password" formControlName="password">
+<!-- Password -->
+<input type="password" placeholder="Enter password" formControlName="password">
   <span *ngIf="password?.hasError('required') && (password?.dirty || password?.touched)">* Password is required</span>
   <span *ngIf="password?.hasError('minlength') && (password?.dirty || password?.touched)">
     Password must be at least 6 characters
   </span>
   <br><br>
 
-  <!-- Email -->
-  <input type="email" placeholder="Enter email" formControlName="email">
+<!-- Email -->
+<input type="email" placeholder="Enter email" formControlName="email">
   <span *ngIf="email?.hasError('required') && (email?.dirty || email?.touched)">* Email is required</span>
   <span *ngIf="email?.hasError('email') && (email?.dirty || email?.touched)">* Enter a valid email</span>
   <br><br>
@@ -207,4 +210,34 @@ sum(10,20);
   <button type="submit">Submit</button>
 </form>
 
+<h1>Template Driven Form</h1>
+<form #userForm="ngForm" (ngSubmit)="addDetails(userForm.value)">
+  <input type="text" #name="ngModel" required placeholder="enter name" name="name" ngModel />
+  <span class="error" *ngIf="name.invalid && name.touched">Name is Required</span>
+  <br /><br />
+  <input type="password" minlength="5" maxlength="10" required #password="ngModel" placeholder="enter password" name="password" ngModel />
+   <span class="error" *ngIf="password.invalid && password.touched">Please enter valid Password</span>
+  <br /><br />
+  <select name="gender">
+    <option value="">Select Gender</option>
+    <option value="male">Female</option>
+    <option value="female">Male</option>
+  </select>
+  <br /><br />
+  <input type="range" min="0" name="range" ngModel />
+  <button [disabled]="userForm.invalid">Add User</button>
+</form>
+<h4>{{ userDetails?.name }}</h4>
+<h4>{{ userDetails?.password }}</h4>
+<h4>{{ userDetails?.email }}</h4>
+<h4>{{ userDetails?.range }}</h4>
 
+<h1>Pass Data to child component</h1>
+<app-user [user]="userName"></app-user>
+
+<select #selectedUser (change)="onUserChange(selectedUser.value)">
+  <option value="Sam">Sam</option>
+  <option value="Fizzy">Fizzy</option>
+  <option value="Tom">Tom</option>
+  <option value="Fifo">Fifo</option>
+</select>

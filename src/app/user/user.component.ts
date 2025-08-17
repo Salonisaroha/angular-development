@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -19,4 +19,7 @@ ngOnInit(){
     this.name=params['name'];
   })
 }
+
+@Input() user:string='';
+@Input() city:string='';
 }

@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, ReactiveFormsModule, FormsModule, NgForm } from '@angular/forms';
 import { NgIf } from '@angular/common';
+import { UserComponent } from './user/user.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [ReactiveFormsModule, NgIf], 
+  imports: [ReactiveFormsModule, NgIf, FormsModule, UserComponent], 
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
@@ -30,5 +31,14 @@ export class AppComponent {
     } else {
       this.profileForm.markAllAsTouched();
     }
+  }
+userDetails:any;
+  addDetails(val:NgForm){
+    console.log(val);
+    this.userDetails=val;
+  }
+userName="Bruce"
+  onUserChange(user:string){
+  this.userName=user
   }
 }
