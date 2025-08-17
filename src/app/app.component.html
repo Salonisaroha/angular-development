@@ -1,24 +1,24 @@
 <h6>Angular js uses single page application which does not require upload the page again and again.</h6>
 
-
+<!-- Other components -->
 <app-login></app-login>
 <app-signup></app-signup>
 <app-profile></app-profile>
 
-<!-- <button (click)="myFunction()">Click me!</button>
+<button (click)="myFunction()">Click me!</button>
 updateName()
-sum(10,20); -->
-<!-- <h5>{{count}}</h5>
+sum(10,20);
+ <h5>{{count}}</h5>
 
 <button (click)="handleIncrement()">Increment</button>
 <button (click) = "handleDecrement()">Decrement</button>
-<button (click)="reset()">Reset</button> -->
+<button (click)="reset()">Reset</button> 
 
-<!-- <button name="login" class="btn" (click)="handleEvent($event)">Click Event</button>
+<button name="login" class="btn" (click)="handleEvent($event)">Click Event</button>
 <div (mouseenter)="handleEvent($event)" style="background-color:green; width:50px; height:40px;"></div>
-<div (mousehover)="handleEvent($event)" style="background-color: burlywood; width:30px; height:30px"></div> -->
+<div (mousehover)="handleEvent($event)" style="background-color: burlywood; width:30px; height:30px"></div>
 
-<!-- <input type="text" (input)="getName($event)" placeholder="Enter Name" value="{{name}}">
+<input type="text" (input)="getName($event)" placeholder="Enter Name" value="{{name}}">
 <button (click)="showName()">Get Name!</button>
 <button (click)="setName()">Set Name!</button>
 <input type="text" placeholder="Enter your email" #emailField value="{{email}}">
@@ -30,11 +30,13 @@ sum(10,20); -->
  <button (click)="hide()">Hide Dev</button>
  <button (click)="show()">Show div</button>
  <button (click)="toggle()">Toggle</button>
+
+                                                                   <!-- ng directives -->
 @if(display){
     <div style="width:100px; background-color: aqua; height: 40px; border: 2px; border-radius: 1px;"></div>
-} -->
+}
 
-<!-- <h5>Control flow | Conditions</h5>
+<h5>Control flow | Conditions</h5>
 <button (click)="handleColor(1)">Red</button>
 <button (click)="handleColor(2)">Blue</button>
 <button (clcik)="handleColor(3)">Yellow</button>
@@ -52,13 +54,14 @@ sum(10,20); -->
 }
 @else {
   <div style="background-color: black; height:20px; width:20px;"></div>
-} -->
+}
 
-<!-- <button (click)="handleSwitch('red')">Red</button>
+<button (click)="handleSwitch('red')">Red</button>
 <button (click)="handleSwitch('yellow')">Yellow</button>
 <button (click)="handleSwitch('blue')">Blue</button>
 <button (click)="handleSwitch('green')">Green</button>
 <input tyep="text" placeholder="enter color name" (input)="handleEvent($event)">
+                                                                          <!-- switch directive -->
 @switch(color){
     @case('red'){
         <div style="background-color: red; width:30px; height:40px;"></div>
@@ -75,9 +78,9 @@ sum(10,20); -->
     @default{
         <div style="background-color: black; width:30px; height:30px;"></div>
     }
-} -->
+} 
 
-<!-- @for(user of users; track user){
+ @for(user of users; track user){
     <h5>{{user}}</h5>
 }
 @for(student of students; track student.name;let id=$index){
@@ -89,23 +92,119 @@ sum(10,20); -->
 
     </h5>
   
-} -->
+}
 
 <h5>{{count()}}</h5>
 <button (click)="updateValue()">Update me!</button>
 <h6>{{x}}</h6>
+<h2>{{data()}}</h2>
+<button (click)="updateValue()">Update</button>
+
+<button (click)="inDic('Inc')">Increment</button>
+<button (click)="inDic('Dec')">Decrement</button>
+<button (click)="showValue()">Show</button>
+<button (click)="userName.set('Saloni')">Update me</button>
 
 
+ @for(user of users; track user){
+  @if($first){
+    <h4 style="background-color: brown;">This is our this {{$index}} my name is {{user}}</h4>
+  }
+  @if($odd){
+     <h4 style="background-color: aliceblue; text-align: center;">This is our this {{$index}} my name is {{user}}</h4>
+  }
+  @if($even){
+    <h4 style="background-color: yellow; text-align: center;">This is our this {{$index}} my name is {{user}}</h4>
+  }
+  
+ 
+ }
+ @empty(){
+  <h5>No record found</h5>
+ }
+
+<input type="text" placeholder="Enter your name" [(ngModel)]="bio">
+<h3>{{bio}}</h3>
+<h2>To-Do List</h2>
+<input type="text" placeholder="Enter your task" [(ngModel)]="task">
+<button (click)="addTask()">Add Task</button>
+
+@for(task of taskList; track task.id){
+  <ul class="task-list">
+    <li>{{task.id}}</li>
+    <li>{{task.task}}</li>
+   <li><button (click)="deleteTask(task.id)">Delete</button></li>
+  </ul>
+}
+<h2 [style.backgroundColor]="bgColor" [style.fontSize]="fontSize">Dynamic Style</h2>
+
+<h5>
+  <ul>
+    <li *ngFor="let x of students">
+      {{x}}
+    </li>
+  </ul>
+  <ul>
+    <li *ngFor="let data of bioData">
+        {{data.name}}, {{data.age}}, {{data.email}}
+    </li>
+  </ul>
+
+  
+</h5>
+<h4 *ngIf="false">{{name}}</h4> 
+<button (click)="changeColor('red')">Red Color</button>
+<button (click)="changeColor('yellow')">Yellow Color</button>
+<button (click)="changeColor('green')">Green Color</button>
+<button (click)="changeColor('blue')">Blue Color</button>
+
+<div [ngSwitch]="color">
+<h4 *ngSwitchCase="'red'" style="background-color: red; height:40px">I am Red</h4>
+<h4 *ngSwitchCase="'green'" style="background-color: green; height:40px">I am green</h4>
+<h4 *ngSwitchCase="'yellow'" style="background-color: yellow; height:40px">I am yellow</h4>
+<h4 *ngSwitchCase="'blue'" style="background-color: blue; height:40px">I am blue</h4>
+<h4 *ngSwitchDefault>No match found!</h4>
+</div>
 
 
+<app-header></app-header>
+<router-outlet></router-outlet>
+                                                                                             <!-- forms in angular -->
+<h1>Basic of React Forms</h1>
+<form actions="" method="post">
+  <input type="text" placeholder="Enter Name" [formControl]="name">
+  <br>
+  <br>
+  <input type="text" placeholder="enter password" [formControl]="password">
+  <br>
+  <br>
+  <button type="button" (click)="displayValue()">Login</button>
+  <button type="button" (click)="setValue()">Set Values in Fields</button>
+</form>
 
+<h1>Form Grouping in Reactive Forms</h1>
+<form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
 
+  <!-- Name -->
+  <input type="text" placeholder="Enter name" formControlName="name">
+  <span *ngIf="name?.hasError('required') && (name?.dirty || name?.touched)">* Please enter username</span>
+  <br><br>
 
+  <!-- Password -->
+  <input type="password" placeholder="Enter password" formControlName="password">
+  <span *ngIf="password?.hasError('required') && (password?.dirty || password?.touched)">* Password is required</span>
+  <span *ngIf="password?.hasError('minlength') && (password?.dirty || password?.touched)">
+    Password must be at least 6 characters
+  </span>
+  <br><br>
 
+  <!-- Email -->
+  <input type="email" placeholder="Enter email" formControlName="email">
+  <span *ngIf="email?.hasError('required') && (email?.dirty || email?.touched)">* Email is required</span>
+  <span *ngIf="email?.hasError('email') && (email?.dirty || email?.touched)">* Enter a valid email</span>
+  <br><br>
 
-
-
-
-
+  <button type="submit">Submit</button>
+</form>
 
 

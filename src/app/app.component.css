@@ -1,0 +1,9 @@
+.task-list {
+    display: flex;
+    justify-content: space-around;
+    align-items: center; 
+    list-style: none;
+}
+.error{
+    color: red;
+}

@@ -1,119 +1,34 @@
-import { Component, signal } from '@angular/core';
+import { Component } from '@angular/core';
+import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
+import { NgIf } from '@angular/common';
 
 @Component({
-    selector: 'app-root',
-    templateUrl: './app.component.html',
-    styleUrls: ['./app.component.css'],
-    standalone: false
+  selector: 'app-root',
+  standalone: true,
+  imports: [ReactiveFormsModule, NgIf], 
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  // myFunction() {
-  //   const input = prompt("Enter your age");
-  //   const age = Number(input); 
+  profileForm: FormGroup;
 
-  //   if (!isNaN(age)) {
-  //     if (age > 18) {
-  //       console.log("You are mature");
-  //     } else {
-  //       console.log("You need workout");
-  //     }
-  //   } else {
-  //     console.log("Invalid age entered");
-  //   }
-  //   this.otherFunction()
-  // }
-  // otherFunction(){
-  //   console.log("This is valid function!");
-  // }
-
-  // name:string|number="saloni"
-  // updateName(){
-  //   this.name = "saroha"
-  //   this.name = 123
-  // }
-  // sum(a:number,b:number){
-  //   console.log(a+b);
-  // }
-  // count = 0;
-  // handleIncrement(){
-  //   this.count = this.count + 1;
-  // }
-  // handleDecrement(){
-  //   this.count = this.count-1;
-  // }
-  // reset(){
-  //   this.count = this.count+2;
-  // }
-  // handleEvent(event:Event){
-  //   console.log("Function called", event.type);
-   
-
-  // }
-
-  name = "";
-  displayName="";
-  email="";
-  displayEmail = "";
-  getName(event:Event){
-   this.name = (event.target as HTMLInputElement).value;
-  
+  constructor(private fb: FormBuilder) {
+    this.profileForm = this.fb.group({
+      name: ['', Validators.required],
+      password: ['', [Validators.required, Validators.minLength(6)]],
+      email: ['', [Validators.required, Validators.email, Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$')]]
+    });
   }
-  showName(){
-     this.displayName = this.name;
+
+  get name() { return this.profileForm.get('name'); }
+  get password() { return this.profileForm.get('password'); }
+  get email() { return this.profileForm.get('email'); }
+
+  onSubmit() {
+    if (this.profileForm.valid) {
+      console.log(this.profileForm.value);
+    } else {
+      this.profileForm.markAllAsTouched();
+    }
   }
-  setName(){
-    this.name = "Sam";
-  }
-getEmail(val:string){
- this.email = val;
- console.log(this.email)
 }
-setEmail(){
-  this.email="sami123@gmail.com";
-}
-display=true;
-hide(){
-  this.display=false;
-}
-show(){
-  this.display=true;
-}
-toggle(){
-  this.display=!this.display;
-}
-color='red';
-// handleColor(val:number){
-//   this.color=val;
-// }
-// handleInput(event: Event) {
-//   this.color = parseInt((event.target as HTMLInputElement).value, 10);
-//   console.log(this.color);
-// }
-// handleSwitch(val:string){
-//   this.color = val;
-// }
-// handleEvent(event:Event){
-// this.color=(event.target as HTMLInputElement).value;
-// }
-
-users =["alpha", "beta", "gamma","sin", "cos","cot", "tan", "cosec", "sec"];
-students = [
- {name:'anil', age:12, email:'fufu@123gmail.com'},
- {name:'lili', age:13, email:'lili@123gmail.com'},
- {name:'yolo', age:14, email:'peter@gmail.com'},
-{name:'keema', age:15, email:'keema@gmail.com'},
- {name:'hippo', age:16, email:'hippo@gmail.com'}
-]
-handleEvent(){
-
-}
-count = signal(10);
-x = 20;
-updateValue(){
-  this.x=50;
-}
-
-}
-
-
-
