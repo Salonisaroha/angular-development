@@ -241,3 +241,14 @@ sum(10,20);
   <option value="Tom">Tom</option>
   <option value="Fifo">Fifo</option>
 </select>
+
+<!-- service -->
+ <h1>{{title}}</h1>
+ <ul>
+  <li *ngFor="let user of users">
+    {{user.name}}   {{user.email}}
+
+  </li>
+ </ul>
+
+ <app-footer></app-footer>
